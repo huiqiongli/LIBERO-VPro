@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&amp;family=Noto+Serif:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/site.css?v=20260921-3">
+  <link rel="stylesheet" href="assets/css/site.css?v=20260921-4">
   <script src="assets/js/site.js" defer></script>
 </head>
 <body>
@@ -46,7 +46,7 @@
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6M8 13h8M8 17h5"></path></svg>
             Paper
           </a>
-          <a class="resource-button primary" href="https://huggingface.co/datasets/Huiqiong0124/LIBERO-VPro" target="_blank" rel="noopener">Dataset</a>
+          <span class="resource-button primary dataset-soon" aria-label="Dataset coming soon">Dataset (soon)</span>
         </div>
       </div>
     </section>
@@ -54,10 +54,10 @@
     <section class="teaser" id="overview">
       <div class="container">
         <div class="takeaway">
-          <p>Strong nominal performance can mask substantial weaknesses in visual grounding and adaptation. LIBERO-VPro evaluates observations that are <strong>incomplete, stale, inconsistent, or behaviorally misleading.</strong></p>
+          <p>A policy may succeed on a clean scene yet fail when the visual evidence is <strong>missing, out of date, contradictory, or no longer matches the scene.</strong> LIBERO-VPro tests these situations during closed-loop execution.</p>
         </div>
         <figure class="main-figure">
-          <img src="assets/images/overview.webp" alt="LIBERO-VPro overview with four dimensions of closed-loop visual robustness" width="1728" height="972">
+          <object class="pdf-embed pdf-overview" data="assets/pdfs/benchmark-overview.pdf" type="application/pdf" aria-label="LIBERO-VPro overview with four dimensions of closed-loop visual robustness"><img src="assets/images/overview.webp" alt="LIBERO-VPro overview with four dimensions of closed-loop visual robustness" width="1728" height="972"></object>
           <figcaption>LIBERO-VPro covers four complementary dimensions of closed-loop visual robustness: Visual Evidence Degradation, Camera Staleness, Visual Source Consistency, and Task-Relevant Scene Variation.</figcaption>
         </figure>
       </div>
@@ -65,9 +65,12 @@
 
     <section class="section abstract-section">
       <div class="container prose-grid">
+        <div class="section-heading abstract-heading"><div><h2>Abstract</h2></div></div>
         <div class="abstract-copy">
-          <p>Robotic foundation models achieve impressive performance on standard manipulation benchmarks, yet these evaluations typically assume clean, timely, and consistent visual observations. Real closed-loop execution is less forgiving: contact can be occluded, camera streams can fall out of sync, and familiar object–location associations can suddenly become wrong.</p>
-          <p>LIBERO-VPro systematically evaluates these failure modes across 12 challenge categories and 96 settings. Six representative vision-language-action and world-action models are tested over approximately 196,000 simulated episodes, complemented by 200 physical rollouts on a Franka Research 3. The results expose substantial weaknesses in visual grounding and online adaptation that nominal task success alone leaves hidden.</p>
+          <p>Robotic foundation models achieve impressive performance on standard manipulation benchmarks, yet these evaluations typically assume clean, timely, and consistent visual observations. We introduce LIBERO-VPro, a benchmark for systematically evaluating the closed-loop visual robustness of robotic foundation models by perturbing the visual evidence available during execution.</p>
+          <p>LIBERO-VPro covers four complementary dimensions, including Visual Evidence Degradation, Camera Staleness, Visual Source Consistency, and Task-Relevant Scene Variation, spanning 12 challenge categories, 96 experimental settings, and 3,296 task-condition cases. We evaluate three vision-language-action models and three world-action models over approximately 196,000 simulated episodes, complemented by 200 real-world rollouts on a Franka Research 3.</p>
+          <p>Our results reveal that strong nominal performance can mask substantial weaknesses in visual grounding and adaptation. Models often remain successful despite severe object-level occlusion, yet degrade sharply when local interaction cues are disrupted or familiar spatial priors are violated. They are also highly sensitive to stale or missing observations and struggle when changed task preconditions require behavioral adaptation.</p>
+          <p>Finally, VLAs and WAMs exhibit distinct robustness profiles, showing that visual robustness is multi-dimensional and architecture-dependent. LIBERO-VPro provides a systematic diagnostic framework for developing robotic foundation models that can more reliably ground and adapt their actions under challenging visual conditions.</p>
         </div>
       </div>
     </section>
@@ -75,13 +78,13 @@
     <section class="section benchmark-section" id="benchmark">
       <div class="container wide">
         <div class="hierarchy-feature">
-          <div><h3>Benchmark overview</h3><p class="hierarchy-summary">The hierarchy summarizes <span>12 challenge categories, 96 experimental settings,</span><span>and 3,296 task-condition cases.</span></p></div>
-          <figure><img src="assets/images/benchmark-hierarchy.webp" alt="Circular hierarchy of LIBERO-VPro dimensions, categories, and settings" width="746" height="746" loading="lazy"></figure>
+          <div><h3>Benchmark overview</h3><p class="hierarchy-summary">LIBERO-VPro organizes <span>12 challenge categories into four complementary dimensions</span><span>of closed-loop visual robustness: evidence availability, temporal freshness, source consistency, and scene adaptation.</span><span>It covers 96 experimental settings and 3,296 task-condition cases across 40 LIBERO tasks.</span></p></div>
+          <figure><object class="pdf-embed pdf-square" data="assets/pdfs/benchmark-hierarchy.pdf" type="application/pdf" aria-label="Circular hierarchy of LIBERO-VPro dimensions, categories, and settings"><img src="assets/images/benchmark-hierarchy.webp" alt="Circular hierarchy of LIBERO-VPro dimensions, categories, and settings" width="746" height="746" loading="lazy"></object></figure>
         </div>
 
         <div class="section-heading simulation-heading">
           <div><h2>Representative simulation cases</h2></div>
-          <p>Controlled visual perturbations expose distinct failure modes across the four benchmark dimensions.</p>
+          <p>Each group below instantiates one benchmark dimension with controlled visual perturbations while keeping the task instruction fixed. Together, the videos show how policies respond when evidence is removed, delayed, made inconsistent, or when the scene itself changes.</p>
         </div>
 
         <div class="dimension-group evidence-group">
@@ -165,7 +168,7 @@
 
         <div class="paper-table-grid original-paper-tables">
           <figure class="paper-table-card original-table">
-            <img src="assets/images/table-ii-overall.png" alt="Original paper Table II: success rate across the eleven LIBERO-VPro challenge categories shared by all six models" width="1566" height="516" loading="lazy">
+            <object class="pdf-embed pdf-table" data="assets/pdfs/table-ii-overall.pdf" type="application/pdf" aria-label="Original paper Table II: success rate across the eleven LIBERO-VPro challenge categories shared by all six models"><img src="assets/images/table-ii-overall.png" alt="Original paper Table II: success rate across the eleven LIBERO-VPro challenge categories shared by all six models" width="1566" height="516" loading="lazy"></object>
           </figure>
           <p class="overall-conclusion">No model consistently dominates across all categories, showing that robustness is multi-dimensional rather than a single capability that scales uniformly with model performance.</p>
         </div>
@@ -179,15 +182,15 @@
           <p>The results reveal that strong nominal performance can mask weaknesses in visual grounding and online adaptation.</p>
         </div>
         <article class="finding-row">
-          <figure><img src="assets/images/interaction-cue-masking.webp" alt="Success rates under interaction-cue masking" width="1269" height="512" loading="lazy"></figure>
+          <figure><object class="pdf-embed pdf-wide" data="assets/pdfs/interaction-cue-masking.pdf" type="application/pdf" aria-label="Success rates under interaction-cue masking"><img src="assets/images/interaction-cue-masking.webp" alt="Success rates under interaction-cue masking" width="1269" height="512" loading="lazy"></object></figure>
           <div><span>What Visual Evidence Do Policies Rely On?</span><h3>Interaction Cues Matter More Than Static Object Appearance.</h3><p>Models often remain successful despite severe object-level occlusion, yet degrade sharply when local interaction cues are disrupted.</p></div>
         </article>
         <article class="finding-row reverse">
-          <figure><img src="assets/images/table-iii-camera-reliance.png" alt="Original paper Table III: per-view success rate under camera staleness and view unavailability" width="780" height="495" loading="lazy"></figure>
+          <figure><object class="pdf-embed pdf-table-small" data="assets/pdfs/table-iii-camera-reliance.pdf" type="application/pdf" aria-label="Original paper Table III: per-view success rate under camera staleness and view unavailability"><img src="assets/images/table-iii-camera-reliance.png" alt="Original paper Table III: per-view success rate under camera staleness and view unavailability" width="780" height="495" loading="lazy"></object></figure>
           <div><span>How Do Policies Use Multi-View Visual Evidence?</span><h3>Stale and Missing Views Reveal Strong Camera Dependence.</h3><p>Camera staleness and view unavailability expose asymmetric reliance on the third-person and wrist cameras across policies.</p></div>
         </article>
         <article class="finding-row">
-          <figure><img src="assets/images/contact-states.webp" alt="Contact-state distribution under task-relevant distractors" width="792" height="482" loading="lazy"></figure>
+          <figure><object class="pdf-embed pdf-contact" data="assets/pdfs/contact-states.pdf" type="application/pdf" aria-label="Contact-state distribution under task-relevant distractors"><img src="assets/images/contact-states.webp" alt="Contact-state distribution under task-relevant distractors" width="792" height="482" loading="lazy"></object></figure>
           <div><span>Can Policies Re-Ground When the Scene Changes?</span><h3>Spatial Distractors Expose Reliance on Learned Positional Priors.</h3><p>Placing a distractor at the target’s familiar position causes success to collapse across models.</p></div>
         </article>
       </div>
@@ -204,8 +207,8 @@
           <header class="case-header"><span class="case-index">(a)</span><div><p class="case-dimension scene">Task-Relevant Scene Variation</p><h3>Same-position distractor</h3></div><p class="case-description">The target object is moved nearby while a distractor occupies its original position.</p></header>
           <p class="instruction">“Pick up the yellow tape and place it in the purple box.”</p>
           <div class="rollout-grid">
-            <figure class="video-card"><div class="video-shell"><video controls autoplay muted loop playsinline preload="metadata" width="960" height="540" poster="assets/images/pick-place-pi05-success.webp" aria-label="Pi 0.5 successful pick-and-place rollout under a same-position distractor"><source src="assets/videos/pick-place-pi05-success.webm" type="video/webm"><source src="assets/videos/pick-place-pi05-success.mp4" type="video/mp4">Your browser does not support embedded video.</video></div><figcaption><span class="model-name">π<sub>0.5</sub></span><span class="outcome success">Success</span></figcaption></figure>
-            <figure class="video-card"><div class="video-shell"><video controls autoplay muted loop playsinline preload="metadata" width="960" height="540" poster="assets/images/pick-place-lawam-failure.webp" aria-label="LaWAM failed pick-and-place rollout under a same-position distractor"><source src="assets/videos/pick-place-lawam-failure.webm" type="video/webm"><source src="assets/videos/pick-place-lawam-failure.mp4" type="video/mp4">Your browser does not support embedded video.</video></div><figcaption><span class="model-name">LaWAM</span><span class="outcome failure">Failure</span></figcaption></figure>
+            <figure class="video-card"><div class="video-shell"><video controls autoplay muted loop playsinline preload="metadata" width="960" height="540" poster="assets/images/pick-place-pi05-success.webp" aria-label="Pi 0.5 successful pick-and-place rollout under a same-position distractor"><source src="assets/videos/pick-place-pi05-success.webm" type="video/webm"><source src="assets/videos/pick-place-pi05-success.mp4" type="video/mp4">Your browser does not support embedded video.</video></div><figcaption><span class="model-name">π<sub>0.5</sub></span><span class="outcome success">Success</span><p class="rollout-note">Re-localizes the displaced target and places it in the purple box.</p></figcaption></figure>
+            <figure class="video-card"><div class="video-shell"><video controls autoplay muted loop playsinline preload="metadata" width="960" height="540" poster="assets/images/pick-place-lawam-failure.webp" aria-label="LaWAM failed pick-and-place rollout under a same-position distractor"><source src="assets/videos/pick-place-lawam-failure.webm" type="video/webm"><source src="assets/videos/pick-place-lawam-failure.mp4" type="video/mp4">Your browser does not support embedded video.</video></div><figcaption><span class="model-name">LaWAM</span><span class="outcome failure">Failure</span><p class="rollout-note">Misses the displaced target after the distractor occupies its familiar original position.</p></figcaption></figure>
           </div>
         </article>
 
@@ -213,8 +216,8 @@
           <header class="case-header"><span class="case-index">(b)</span><div><p class="case-dimension stale">Camera Staleness</p><h3>Third-person delay by one replan</h3></div><p class="case-description">The third-person observation is delayed by one replanning cycle while the wrist view remains current.</p></header>
           <p class="instruction">“Move the white box to the right.”</p>
           <div class="rollout-grid">
-            <figure class="video-card"><div class="video-shell"><video controls autoplay muted loop playsinline preload="metadata" width="960" height="540" poster="assets/images/move-pi05-success.webp" aria-label="Pi 0.5 successful move rollout under third-person camera staleness"><source src="assets/videos/move-pi05-success.webm" type="video/webm"><source src="assets/videos/move-pi05-success.mp4" type="video/mp4">Your browser does not support embedded video.</video></div><figcaption><span class="model-name">π<sub>0.5</sub></span><span class="outcome success">Success</span></figcaption></figure>
-            <figure class="video-card"><div class="video-shell"><video controls autoplay muted loop playsinline preload="metadata" width="960" height="540" poster="assets/images/move-lawam-failure.webp" aria-label="LaWAM failed move rollout under third-person camera staleness"><source src="assets/videos/move-lawam-failure.webm" type="video/webm"><source src="assets/videos/move-lawam-failure.mp4" type="video/mp4">Your browser does not support embedded video.</video></div><figcaption><span class="model-name">LaWAM</span><span class="outcome failure">Failure</span></figcaption></figure>
+            <figure class="video-card"><div class="video-shell"><video controls autoplay muted loop playsinline preload="metadata" width="960" height="540" poster="assets/images/move-pi05-success.webp" aria-label="Pi 0.5 successful move rollout under third-person camera staleness"><source src="assets/videos/move-pi05-success.webm" type="video/webm"><source src="assets/videos/move-pi05-success.mp4" type="video/mp4">Your browser does not support embedded video.</video></div><figcaption><span class="model-name">π<sub>0.5</sub></span><span class="outcome success">Success</span><p class="rollout-note">Completes the Move task despite the delayed third-person observation.</p></figcaption></figure>
+            <figure class="video-card"><div class="video-shell"><video controls autoplay muted loop playsinline preload="metadata" width="960" height="540" poster="assets/images/move-lawam-failure.webp" aria-label="LaWAM failed move rollout under third-person camera staleness"><source src="assets/videos/move-lawam-failure.webm" type="video/webm"><source src="assets/videos/move-lawam-failure.mp4" type="video/mp4">Your browser does not support embedded video.</video></div><figcaption><span class="model-name">LaWAM</span><span class="outcome failure">Failure</span><p class="rollout-note">Follows a pushing trajectory without establishing contact with the white box.</p></figcaption></figure>
           </div>
         </article>
       </div>
