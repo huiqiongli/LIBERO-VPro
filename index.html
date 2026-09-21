@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LIBERO-VPro — Closed-Loop Visual Robustness</title>
+  <meta name="description" content="LIBERO-VPro benchmarks the closed-loop visual robustness of robotic foundation models across 12 challenge categories, simulation, and real-world Franka experiments.">
+  <meta name="keywords" content="LIBERO-VPro, visual robustness, robotic foundation models, VLA, WAM, robot manipulation, benchmark">
+  <meta name="author" content="Huiqiong Li, Zhiting Mei, Anirudha Majumdar, Jingjing Chen, Yu-Gang Jiang, Bin Zhu">
+  <link rel="canonical" href="https://huiqiongli.github.io/LIBERO-VPro/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="LIBERO-VPro: Benchmarking Closed-Loop Visual Robustness of Robotic Foundation Models">
+  <meta property="og:description" content="A systematic benchmark of incomplete, stale, inconsistent, and behaviorally misleading visual feedback.">
+  <meta property="og:image" content="assets/images/overview.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&amp;family=Noto+Serif:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css?v=20260921-3">
+  <script src="assets/js/site.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <main id="main-content">
+    <section class="hero" id="top">
+      <div class="container hero-inner">
+        <h1><span>LIBERO-VPro: Benchmarking Closed-Loop</span><br>Visual Robustness of Robotic Foundation Models</h1>
+        <p class="authors" aria-label="Authors">
+          <a href="https://huiqiongli.github.io/" target="_blank" rel="noopener">Huiqiong Li</a><sup>1</sup>,
+          <a href="https://may0mei.github.io/" target="_blank" rel="noopener">Zhiting Mei</a><sup>2</sup>,
+          <a href="https://irom-lab.princeton.edu/majumdar/" target="_blank" rel="noopener">Anirudha Majumdar</a><sup>2</sup>,
+          <a href="https://jingjing1.github.io/#teach" target="_blank" rel="noopener">Jingjing Chen</a><sup>3</sup>,
+          <a href="https://am.fudan.edu.cn/9e/b5/c48458a761525/page.htm" target="_blank" rel="noopener">Yu-Gang Jiang</a><sup>3</sup>,
+          <a href="https://binzhubz.github.io/" target="_blank" rel="noopener">Bin Zhu</a><sup>1,†</sup>
+        </p>
+        <p class="affiliations">
+          <span><sup>1</sup> Singapore Management University</span>
+          <span><sup>2</sup> Princeton University</span>
+          <span><sup>3</sup> Fudan University</span>
+        </p>
+        <p class="correspondence"><sup>†</sup> Corresponding author</p>
+        <div class="resource-links" aria-label="Project resources">
+          <a class="resource-button primary" href="assets/LIBERO-VPro.pdf" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6M8 13h8M8 17h5"></path></svg>
+            Paper
+          </a>
+          <a class="resource-button primary" href="https://huggingface.co/datasets/Huiqiong0124/real_robot" target="_blank" rel="noopener">Dataset</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="teaser" id="overview">
+      <div class="container">
+        <div class="takeaway">
+          <p>Strong nominal performance can mask substantial weaknesses in visual grounding and adaptation. LIBERO-VPro evaluates observations that are <strong>incomplete, stale, inconsistent, or behaviorally misleading.</strong></p>
+        </div>
+        <figure class="main-figure">
+          <img src="assets/images/overview.webp" alt="LIBERO-VPro overview with four dimensions of closed-loop visual robustness" width="1728" height="972">
+          <figcaption>LIBERO-VPro covers four complementary dimensions of closed-loop visual robustness: Visual Evidence Degradation, Camera Staleness, Visual Source Consistency, and Task-Relevant Scene Variation.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section abstract-section">
+      <div class="container prose-grid">
+        <div class="abstract-copy">
+          <p>Robotic foundation models achieve impressive performance on standard manipulation benchmarks, yet these evaluations typically assume clean, timely, and consistent visual observations. Real closed-loop execution is less forgiving: contact can be occluded, camera streams can fall out of sync, and familiar object–location associations can suddenly become wrong.</p>
+          <p>LIBERO-VPro systematically evaluates these failure modes across 12 challenge categories and 96 settings. Six representative vision-language-action and world-action models are tested over approximately 196,000 simulated episodes, complemented by 200 physical rollouts on a Franka Research 3. The results expose substantial weaknesses in visual grounding and online adaptation that nominal task success alone leaves hidden.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section benchmark-section" id="benchmark">
+      <div class="container wide">
+        <div class="hierarchy-feature">
+          <div><h3>Benchmark overview</h3><p class="hierarchy-summary">The hierarchy summarizes <span>12 challenge categories, 96 experimental settings,</span><span>and 3,296 task-condition cases.</span></p></div>
+          <figure><img src="assets/images/benchmark-hierarchy.webp" alt="Circular hierarchy of LIBERO-VPro dimensions, categories, and settings" width="746" height="746" loading="lazy"></figure>
+        </div>
+
+        <div class="section-heading simulation-heading">
+          <div><h2>Representative simulation cases</h2></div>
+          <p>Controlled visual perturbations expose distinct failure modes across the four benchmark dimensions.</p>
+        </div>
+
+        <div class="dimension-group evidence-group">
+          <div class="dimension-copy">
+            <span>Dimension 01 · 5 categories</span>
+            <h3>Visual Evidence Degradation</h3>
+            <p>Tests whether a policy can continue when task-relevant visual information becomes locally or globally unavailable.</p>
+            <div class="group-task"><span>Shared task · π<sub>0.5</sub></span><q>Put the bowl on the plate.</q></div>
+          </div>
+          <div class="category-grid five">
+            <article class="category-card"><div class="category-title-row"><p><b>01</b> Target-Object Masking</p><span class="outcome success">Success</span></div><div class="sim-video-shell"><video controls autoplay muted loop playsinline preload="metadata" width="512" height="256" poster="assets/images/sim-01-target-object-masking.webp" aria-label="Successful target-object masking rollout for put the bowl on the plate"><source src="assets/videos/sim-01-target-object-masking.webm" type="video/webm"><source src="assets/videos/sim-01-target-object-masking.mp4" type="video/mp4"></video></div><span class="category-meta">Both camera views · 100% object mask</span></article>
+            <article class="category-card"><div class="category-title-row"><p><b>02</b> Target-Receptacle Masking</p><span class="outcome success">Success</span></div><div class="sim-video-shell"><video controls autoplay muted loop playsinline preload="metadata" width="512" height="256" poster="assets/images/sim-02-target-receptacle-masking.webp" aria-label="Successful target-receptacle masking rollout for put the bowl on the plate"><source src="assets/videos/sim-02-target-receptacle-masking.webm" type="video/webm"><source src="assets/videos/sim-02-target-receptacle-masking.mp4" type="video/mp4"></video></div><span class="category-meta">Both camera views · 100% receptacle mask</span></article>
+            <article class="category-card"><div class="category-title-row"><p><b>03</b> Interaction-Cue Masking</p><span class="outcome failure">Failure</span></div><div class="sim-video-shell"><video controls autoplay muted loop playsinline preload="metadata" width="512" height="256" poster="assets/images/sim-03-interaction-cue-masking.webp" aria-label="Failed interaction-cue masking rollout ending with the bowl and plate separated"><source src="assets/videos/sim-03-interaction-cue-masking.webm" type="video/webm"><source src="assets/videos/sim-03-interaction-cue-masking.mp4" type="video/mp4"></video></div><span class="category-meta">Both camera views · gripper mask · bowl and plate remain separated</span></article>
+            <article class="category-card"><div class="category-title-row"><p><b>04</b> Temporary Observation Corruption</p><span class="outcome success">Success</span></div><div class="sim-video-shell"><video controls autoplay muted loop playsinline preload="metadata" width="512" height="256" poster="assets/images/sim-04-temporary-observation-corruption.webp" aria-label="Successful temporary observation corruption rollout with an early reach-phase blackout"><source src="assets/videos/sim-04-temporary-observation-corruption.webm" type="video/webm"><source src="assets/videos/sim-04-temporary-observation-corruption.mp4" type="video/mp4"></video></div><span class="category-meta">Both camera views · early reach-phase blackout</span></article>
+            <article class="category-card multi-example view-pair-card">
+              <div class="category-title-row"><p><b>05</b> View Unavailability</p><span class="category-meta">One camera blacked out · the other remains live</span></div>
+              <div class="view-pair-grid">
+                <div class="staleness-variant"><div class="sim-video-shell"><video controls autoplay muted loop playsinline preload="metadata" width="512" height="256" poster="assets/images/sim-05-view-unavailability.webp" aria-label="Failed wrist-camera blackout rollout for put the bowl on the plate"><source src="assets/videos/sim-05-view-unavailability.webm" type="video/webm"><source src="assets/videos/sim-05-view-unavailability.mp4" type="video/mp4"></video></div><div class="staleness-caption"><strong>Wrist camera blacked out</strong><span class="outcome failure">Failure</span></div></div>
+                <div class="staleness-variant"><div class="sim-video-shell"><video controls autoplay muted loop playsinline preload="metadata" width="512" height="256" poster="assets/images/sim-05-view-unavailability-third-person.webp" aria-label="Successful third-person-camera blackout rollout for put the bowl on the plate"><source src="assets/videos/sim-05-view-unavailability-third-person.webm" type="video/webm"><source src="assets/videos/sim-05-view-unavailability-third-person.mp4" type="video/mp4"></video></div><div class="staleness-caption"><strong>Third-person camera blacked out</strong><span class="outcome success">Success</span></div></div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="dimension-group stale-group">
+          <div class="dimension-copy">
+            <span>Dimension 02 · 1 category</span>
+            <h3>Camera Staleness</h3>
+            <p>Separates current perception from delayed, frozen, or historically replayed observations.</p>
+            <div class="group-task"><span>Shared task · π<sub>0.5</sub></span><q>Put the bowl on the plate.</q></div>
+          </div>
+          <div class="category-grid">
+            <article class="category-card multi-example">
+              <div class="category-title-row"><p><b>06</b> Camera Staleness</p><span class="category-meta">Third-person camera affected · wrist camera remains live</span></div>
+              <div class="staleness-grid">
+                <div class="staleness-variant"><div class="sim-video-shell"><video controls autoplay muted loop playsinline preload="metadata" width="512" height="256" poster="assets/images/sim-06-camera-staleness.webp" aria-label="Failed third-person camera delay rollout for put the bowl on the plate"><source src="assets/videos/sim-06-camera-staleness.webm" type="video/webm"><source src="assets/videos/sim-06-camera-staleness.mp4" type="video/mp4"></video></div><div class="staleness-caption"><strong>Delay-3 · third-person</strong><span class="outcome failure">Failure</span></div></div>
+                <div class="staleness-variant"><div class="sim-video-shell"><video controls autoplay muted loop playsinline preload="metadata" width="512" height="256" poster="assets/images/sim-06-camera-staleness-freeze.webp" aria-label="Failed third-person camera freeze rollout for put the bowl on the plate"><source src="assets/videos/sim-06-camera-staleness-freeze.webm" type="video/webm"><source src="assets/videos/sim-06-camera-staleness-freeze.mp4" type="video/mp4"></video></div><div class="staleness-caption"><strong>Freeze · third-person</strong><span class="outcome failure">Failure</span></div></div>
+                <div class="staleness-variant"><div class="sim-video-shell"><video controls autoplay muted loop playsinline preload="metadata" width="512" height="256" poster="assets/images/sim-06-camera-staleness-replay.webp" aria-label="Failed third-person camera replay rollout for put the bowl on the plate"><source src="assets/videos/sim-06-camera-staleness-replay.webm" type="video/webm"><source src="assets/videos/sim-06-camera-staleness-replay.mp4" type="video/mp4"></video></div><div class="staleness-caption"><strong>Replay · third-person</strong><span class="outcome failure">Failure</span></div></div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="dimension-group consistency-group">
+          <div class="dimension-copy">
+            <span>Dimension 03 · 2 categories</span>
+            <h3>Visual Source Consistency</h3>
+            <p>Probes what happens when camera views—or predicted and realized futures—tell incompatible stories.</p>
+            <div class="group-task"><span>Shared task · FastWAM + LingBot-VLA</span><q>Put the bowl on the plate.</q></div>
+          </div>
+          <div class="category-grid">
+            <article class="category-card"><div class="category-title-row"><p><b>07</b> Cross-View Contradiction</p><span class="outcome success">Success</span></div><div class="sim-video-shell"><video controls autoplay muted loop playsinline preload="metadata" width="512" height="256" poster="assets/images/sim-07-cross-view-contradiction.webp" aria-label="Successful cross-view contradiction rollout for put the bowl on the plate"><source src="assets/videos/sim-07-cross-view-contradiction.webm" type="video/webm"><source src="assets/videos/sim-07-cross-view-contradiction.mp4" type="video/mp4"></video></div><span class="category-meta">FastWAM · third-person position contradiction · wrist camera unchanged</span></article>
+            <article class="category-card"><div class="category-title-row"><p><b>08</b> Prediction–Reality Divergence</p><span class="outcome failure">Failure</span></div><div class="sim-video-shell"><video controls autoplay muted loop playsinline preload="metadata" width="512" height="256" poster="assets/images/sim-08-prediction-reality-divergence.webp" aria-label="Failed LingBot-VLA prediction-reality divergence rollout for put the bowl on the plate"><source src="assets/videos/sim-08-prediction-reality-divergence.webm" type="video/webm"><source src="assets/videos/sim-08-prediction-reality-divergence.mp4" type="video/mp4"></video></div><span class="category-meta">LingBot-VLA · recursive self-prediction · both model-input views</span></article>
+          </div>
+        </div>
+
+        <div class="dimension-group scene-group">
+          <div class="dimension-copy">
+            <span>Dimension 04 · 4 categories</span>
+            <h3>Task-Relevant Scene Variation</h3>
+            <p>Changes the scene while preserving the instruction, requiring active re-grounding rather than memorized spatial priors.</p>
+            <div class="group-task"><span>Shared task · π<sub>0.5</sub></span><q>Pick up the alphabet soup and place it in the basket.</q></div>
+          </div>
+          <div class="category-grid">
+            <article class="category-card"><div class="category-title-row"><p><b>09</b> Task-Relevant Distractors</p><span class="outcome failure">Failure</span></div><div class="sim-video-shell"><video controls autoplay muted loop playsinline preload="metadata" width="512" height="256" poster="assets/images/sim-09-task-relevant-distractors.webp" aria-label="Failed task-relevant distractor rollout in which pi 0.5 grasps the same-position distractor instead of the alphabet soup"><source src="assets/videos/sim-09-task-relevant-distractors.webm" type="video/webm"><source src="assets/videos/sim-09-task-relevant-distractors.mp4" type="video/mp4"></video></div><span class="category-meta">π0.5 · both camera views · same-position distractor grasped</span></article>
+            <article class="category-card"><div class="category-title-row"><p><b>10</b> Task-Precondition Variation</p><span class="outcome failure">Failure</span></div><div class="sim-video-shell"><video controls autoplay muted loop playsinline preload="metadata" width="512" height="256" poster="assets/images/sim-10-task-precondition-variation.webp" aria-label="Failed object-pose variation rollout with the side-lying alphabet soup left on the table"><source src="assets/videos/sim-10-task-precondition-variation.webm" type="video/webm"><source src="assets/videos/sim-10-task-precondition-variation.mp4" type="video/mp4"></video></div><span class="category-meta">π0.5 · object pose: adjacent support face (side-lying) · soup remains on table</span></article>
+            <article class="category-card"><div class="category-title-row"><p><b>11</b> Visual State Ambiguity</p><span class="outcome success">Success</span></div><div class="sim-video-shell"><video controls autoplay muted loop playsinline preload="metadata" width="512" height="256" poster="assets/images/sim-11-visual-state-ambiguity.webp" aria-label="Successful visual state ambiguity rollout for pick up the alphabet soup and place it in the basket"><source src="assets/videos/sim-11-visual-state-ambiguity.webm" type="video/webm"><source src="assets/videos/sim-11-visual-state-ambiguity.mp4" type="video/mp4"></video></div><span class="category-meta">π0.5 · object-support-state ambiguity</span></article>
+            <article class="category-card"><div class="category-title-row"><p><b>12</b> Target Geometry Variation</p><span class="outcome success">Success</span></div><div class="sim-video-shell"><video controls autoplay muted loop playsinline preload="metadata" width="512" height="256" poster="assets/images/sim-12-target-geometry-variation.webp" aria-label="Successful target geometry variation rollout with a strongly twisted alphabet soup can"><source src="assets/videos/sim-12-target-geometry-variation.webm" type="video/webm"><source src="assets/videos/sim-12-target-geometry-variation.mp4" type="video/mp4"></video></div><span class="category-meta">π0.5 · high twist deformation · pronounced in the wrist close-up</span></article>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section quantitative-section" id="results">
+      <div class="container wide">
+        <div class="section-heading results-heading">
+          <div><h2>Experimental Results</h2></div>
+          <p>Visual robustness is multi-dimensional. Table II summarizes performance across the 11 challenge categories shared by all six models.</p>
+        </div>
+
+        <div class="paper-table-grid original-paper-tables">
+          <figure class="paper-table-card original-table">
+            <img src="assets/images/table-ii-overall.png" alt="Original paper Table II: success rate across the eleven LIBERO-VPro challenge categories shared by all six models" width="1566" height="516" loading="lazy">
+          </figure>
+          <p class="overall-conclusion">No model consistently dominates across all categories, showing that robustness is multi-dimensional rather than a single capability that scales uniformly with model performance.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section findings-section" id="findings">
+      <div class="container">
+        <div class="section-heading findings-heading">
+          <div><h2>Visual grounding and adaptation</h2></div>
+          <p>The results reveal that strong nominal performance can mask weaknesses in visual grounding and online adaptation.</p>
+        </div>
+        <article class="finding-row">
+          <figure><img src="assets/images/interaction-cue-masking.webp" alt="Success rates under interaction-cue masking" width="1269" height="512" loading="lazy"></figure>
+          <div><span>What Visual Evidence Do Policies Rely On?</span><h3>Interaction Cues Matter More Than Static Object Appearance.</h3><p>Models often remain successful despite severe object-level occlusion, yet degrade sharply when local interaction cues are disrupted.</p></div>
+        </article>
+        <article class="finding-row reverse">
+          <figure><img src="assets/images/table-iii-camera-reliance.png" alt="Original paper Table III: per-view success rate under camera staleness and view unavailability" width="780" height="495" loading="lazy"></figure>
+          <div><span>How Do Policies Use Multi-View Visual Evidence?</span><h3>Stale and Missing Views Reveal Strong Camera Dependence.</h3><p>Camera staleness and view unavailability expose asymmetric reliance on the third-person and wrist cameras across policies.</p></div>
+        </article>
+        <article class="finding-row">
+          <figure><img src="assets/images/contact-states.webp" alt="Contact-state distribution under task-relevant distractors" width="792" height="482" loading="lazy"></figure>
+          <div><span>Can Policies Re-Ground When the Scene Changes?</span><h3>Spatial Distractors Expose Reliance on Learned Positional Priors.</h3><p>Placing a distractor at the target’s familiar position causes success to collapse across models.</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section real-world-section" id="real-world">
+      <div class="container wide">
+        <div class="section-heading">
+          <div><h2>Representative physical rollouts</h2></div>
+          <p>Representative real-world rollouts under two LIBERO-VPro perturbations: Same-Position Distractor on the Pick-and-Place task and Third-Person Camera Staleness on the Move task.</p>
+        </div>
+
+        <article class="rollout-case">
+          <header class="case-header"><span class="case-index">(a)</span><div><p class="case-dimension scene">Task-Relevant Scene Variation</p><h3>Same-position distractor</h3></div><p class="case-description">The target object is moved nearby while a distractor occupies its original position.</p></header>
+          <p class="instruction">“Pick up the yellow tape and place it in the purple box.”</p>
+          <div class="rollout-grid">
+            <figure class="video-card"><div class="video-shell"><video controls autoplay muted loop playsinline preload="metadata" width="960" height="540" poster="assets/images/pick-place-pi05-success.webp" aria-label="Pi 0.5 successful pick-and-place rollout under a same-position distractor"><source src="assets/videos/pick-place-pi05-success.webm" type="video/webm"><source src="assets/videos/pick-place-pi05-success.mp4" type="video/mp4">Your browser does not support embedded video.</video></div><figcaption><span class="model-name">π<sub>0.5</sub></span><span class="outcome success">Success</span></figcaption></figure>
+            <figure class="video-card"><div class="video-shell"><video controls autoplay muted loop playsinline preload="metadata" width="960" height="540" poster="assets/images/pick-place-lawam-failure.webp" aria-label="LaWAM failed pick-and-place rollout under a same-position distractor"><source src="assets/videos/pick-place-lawam-failure.webm" type="video/webm"><source src="assets/videos/pick-place-lawam-failure.mp4" type="video/mp4">Your browser does not support embedded video.</video></div><figcaption><span class="model-name">LaWAM</span><span class="outcome failure">Failure</span></figcaption></figure>
+          </div>
+        </article>
+
+        <article class="rollout-case">
+          <header class="case-header"><span class="case-index">(b)</span><div><p class="case-dimension stale">Camera Staleness</p><h3>Third-person delay by one replan</h3></div><p class="case-description">The third-person observation is delayed by one replanning cycle while the wrist view remains current.</p></header>
+          <p class="instruction">“Move the white box to the right.”</p>
+          <div class="rollout-grid">
+            <figure class="video-card"><div class="video-shell"><video controls autoplay muted loop playsinline preload="metadata" width="960" height="540" poster="assets/images/move-pi05-success.webp" aria-label="Pi 0.5 successful move rollout under third-person camera staleness"><source src="assets/videos/move-pi05-success.webm" type="video/webm"><source src="assets/videos/move-pi05-success.mp4" type="video/mp4">Your browser does not support embedded video.</video></div><figcaption><span class="model-name">π<sub>0.5</sub></span><span class="outcome success">Success</span></figcaption></figure>
+            <figure class="video-card"><div class="video-shell"><video controls autoplay muted loop playsinline preload="metadata" width="960" height="540" poster="assets/images/move-lawam-failure.webp" aria-label="LaWAM failed move rollout under third-person camera staleness"><source src="assets/videos/move-lawam-failure.webm" type="video/webm"><source src="assets/videos/move-lawam-failure.mp4" type="video/mp4">Your browser does not support embedded video.</video></div><figcaption><span class="model-name">LaWAM</span><span class="outcome failure">Failure</span></figcaption></figure>
+          </div>
+        </article>
+      </div>
+    </section>
+
+  </main>
+</body>
+</html>
