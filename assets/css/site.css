@@ -182,6 +182,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .staleness-caption { display: flex; margin-top: 6px; padding-top: 0; align-items: center; justify-content: space-between; gap: 8px; }
 .staleness-caption strong { color: var(--muted); font-size: .80rem; font-weight: 500; }
 .hierarchy-feature { display: grid; margin-top: 12px; padding: 24px 32px; grid-template-columns: 1fr .78fr; align-items: center; gap: 22px; color: var(--ink); border-radius: 12px; background: #f7f8fa; }
+.hierarchy-feature + .simulation-heading { margin-top: 0; padding: 0 32px 22px; border-radius: 0 0 12px 12px; background: #f7f8fa; }
 .hierarchy-feature > div { max-width: 520px; margin-left: 120px; justify-self: start; text-align: left; }
 .hierarchy-feature .section-label { color: var(--accent); }
 .hierarchy-feature h3 { margin: 4px 0 10px; color: var(--ink); font-family: 'Noto Serif', Georgia, serif; font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 600; letter-spacing: -.02em; line-height: 1.15; }
@@ -313,6 +314,7 @@ footer { padding: 28px 0; background: #fff; }
   .category-grid, .category-grid.five { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .view-pair-grid, .staleness-grid { grid-template-columns: 1fr; }
   .hierarchy-feature { padding: 18px; grid-template-columns: 1fr; gap: 18px; }
+  .hierarchy-feature + .simulation-heading { padding: 0 18px 18px; }
   .hierarchy-feature > div { max-width: none; margin-left: 0; text-align: left; }
   .simulation-heading { margin-top: 22px; padding: 14px 16px; }
   .finding-row, .finding-row.reverse { padding: 12px 0; grid-template-columns: 1fr; gap: 14px; }
