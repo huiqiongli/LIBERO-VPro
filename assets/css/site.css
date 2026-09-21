@@ -181,7 +181,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .staleness-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
 .staleness-caption { display: flex; margin-top: 6px; padding-top: 0; align-items: center; justify-content: space-between; gap: 8px; }
 .staleness-caption strong { color: var(--muted); font-size: .80rem; font-weight: 500; }
-.hierarchy-feature { display: grid; margin-top: 12px; padding: 24px 32px; grid-template-columns: 1fr .78fr; align-items: center; gap: 22px; color: var(--ink); border-radius: 12px; background: #f7f8fa; }
+.hierarchy-feature { display: grid; margin-top: 12px; padding: 24px 32px; grid-template-columns: 1fr .78fr; align-items: center; gap: 22px; color: var(--ink); border-radius: 12px; background: transparent; }
 .hierarchy-feature > div { max-width: 520px; margin-left: 120px; justify-self: start; text-align: left; }
 .hierarchy-feature .section-label { color: var(--accent); }
 .hierarchy-feature h3 { margin: 4px 0 10px; color: var(--ink); font-family: 'Noto Serif', Georgia, serif; font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 600; letter-spacing: -.02em; line-height: 1.15; }
