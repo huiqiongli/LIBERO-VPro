@@ -78,7 +78,7 @@
     <section class="section benchmark-section" id="benchmark">
       <div class="container wide">
         <div class="hierarchy-feature">
-          <div><h3>Benchmark overview</h3><p class="hierarchy-summary"><span>LIBERO-VPro organizes 12 challenge categories</span><span>into four complementary dimensions of closed-loop visual robustness.</span><span>Visual Evidence Degradation tests missing or corrupted cues; Camera Staleness tests delayed, frozen, or replayed views.</span><span>Visual Source Consistency tests conflicting camera or predicted evidence; Task-Relevant Scene Variation tests whether actions adapt to a changed scene.</span><span>The benchmark covers 96 experimental settings and 3,296 task-condition cases across 40 LIBERO tasks. The representative simulation cases below instantiate these dimensions through controlled examples.</span></p></div>
+          <div><h3>Benchmark overview</h3><p class="hierarchy-summary"><span>LIBERO-VPro organizes 12 challenge categories</span><span>into four complementary dimensions of closed-loop visual robustness.</span><span>Visual Evidence Degradation removes or corrupts task-relevant visual information; Camera Staleness introduces temporal mismatch between observations and the current physical state.</span><span>Visual Source Consistency introduces contradictory evidence across views or between predicted and realized observations; Task-Relevant Scene Variation modifies visual properties that should require behavioral re-grounding.</span><span>The benchmark covers 96 experimental settings and 3,296 task-condition cases across 40 LIBERO tasks. The representative simulation cases below instantiate these dimensions through controlled examples.</span></p></div>
           <figure><img src="assets/images/benchmark-hierarchy-pdf.png" alt="Circular hierarchy of LIBERO-VPro dimensions, categories, and settings" width="746" height="746" loading="lazy"></figure>
         </div>
 
@@ -86,7 +86,7 @@
           <div class="dimension-copy">
             <span>Dimension 01 · 5 categories</span>
             <h3>Visual Evidence Degradation</h3>
-            <p>Evaluates information loss at multiple spatial scales, from individual objects and interaction regions to complete frames and camera views.</p>
+            <p>Removes or corrupts task-relevant visual information at different spatial and temporal scales.</p>
             <div class="group-task"><span>Shared task</span><q>Put the bowl on the plate.</q></div>
           </div>
           <div class="category-grid five">
@@ -108,7 +108,7 @@
           <div class="dimension-copy">
             <span>Dimension 02 · 1 category</span>
             <h3>Camera Staleness</h3>
-            <p>Simulates camera latency and frame drops through fixed delays, observation freezing, and historical replay while the other view remains current.</p>
+            <p>Introduces temporal mismatch between observations and the current physical state through delay, freezing, and replay.</p>
             <div class="group-task"><span>Shared task</span><q>Put the bowl on the plate.</q></div>
           </div>
           <div class="category-grid">
@@ -127,7 +127,7 @@
           <div class="dimension-copy">
             <span>Dimension 03 · 2 categories</span>
             <h3>Visual Source Consistency</h3>
-            <p>Tests whether multiple visual sources remain consistent about the task-relevant state, including physical camera views and predicted visual futures.</p>
+            <p>Introduces contradictory evidence across views or between predicted and realized observations.</p>
             <div class="group-task"><span>Shared task</span><q>Put the bowl on the plate.</q></div>
           </div>
           <div class="category-grid">
@@ -140,7 +140,7 @@
           <div class="dimension-copy">
             <span>Dimension 04 · 4 categories</span>
             <h3>Task-Relevant Scene Variation</h3>
-            <p>Changes the scene while keeping observations complete, current, and mutually consistent, testing whether a policy can re-ground its behavior in the current scene.</p>
+            <p>Modifies visual properties that should require the policy to re-ground its behavior in the current scene.</p>
             <div class="group-task"><span>Shared task</span><q>Pick up the alphabet soup and place it in the basket.</q></div>
           </div>
           <div class="category-grid">
