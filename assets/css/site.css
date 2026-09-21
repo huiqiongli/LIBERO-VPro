@@ -96,8 +96,6 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .pdf-square { width: 100%; height: min(48vw, 620px); }
 .pdf-wide { height: clamp(260px, 36vw, 520px); }
 .pdf-contact { height: clamp(250px, 36vw, 500px); }
-.pdf-table { height: clamp(230px, 34vw, 500px); }
-.pdf-table-small { height: clamp(250px, 38vw, 500px); }
 .main-figure figcaption { max-width: 800px; margin: 10px auto 0; color: var(--muted); font-size: .78rem; text-align: center; }
 .benchmark-scale { display: grid; margin-top: 26px; grid-template-columns: repeat(6, 1fr); overflow: hidden; background: var(--surface); }
 .benchmark-scale div { padding: 18px 12px; border-right: 1px solid var(--line); text-align: center; }
@@ -199,7 +197,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .findings-section .section-label { color: var(--accent); }
 .findings-section .section-heading h2 { color: var(--ink); }
 .findings-section .section-heading > p { color: var(--muted); }
-.simulation-heading { max-width: none; margin: 28px 0 24px; padding: 14px 0 18px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: transparent; }
+.simulation-heading { max-width: none; margin: 28px 0 24px; padding: 16px 20px; border-radius: 12px; background: #f7f8fa; }
 .findings-heading { margin-bottom: 28px; }
 .finding-row { display: grid; padding: 16px 0; grid-template-columns: 1.38fr .62fr; align-items: center; gap: 32px; background: #fff; }
 .finding-row + .finding-row { margin-top: 8px; }
@@ -300,7 +298,7 @@ footer { padding: 28px 0; background: #fff; }
   .main-figure { padding: 8px 8px 10px; }
   .pdf-overview { height: 58vw; min-height: 210px; }
   .pdf-square { height: 82vw; max-height: 500px; }
-  .pdf-wide, .pdf-contact, .pdf-table, .pdf-table-small { height: 60vw; min-height: 220px; }
+  .pdf-wide, .pdf-contact { height: 60vw; min-height: 220px; }
   .benchmark-scale { grid-template-columns: repeat(2, 1fr); }
   .benchmark-scale div:nth-child(3) { border-right: 1px solid var(--line); }
   .benchmark-scale div:nth-child(even) { border-right: 0; }
