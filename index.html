@@ -54,7 +54,7 @@
     <section class="teaser" id="overview">
       <div class="container">
         <div class="takeaway">
-          <p>A policy may succeed on a clean scene yet fail when the visual evidence is <strong>missing, out of date, contradictory, or no longer matches the scene.</strong> LIBERO-VPro tests these situations during closed-loop execution.</p>
+          <p>Strong nominal performance can mask substantial weaknesses in visual grounding and adaptation. During closed-loop execution, visual evidence may become <strong>incomplete, stale, inconsistent, or behaviorally misleading.</strong></p>
         </div>
         <figure class="main-figure">
           <img src="assets/images/benchmark-overview-pdf.png" alt="LIBERO-VPro overview with four dimensions of closed-loop visual robustness" width="2880" height="1620">
@@ -86,7 +86,7 @@
           <div class="dimension-copy">
             <span>Dimension 01 · 5 categories</span>
             <h3>Visual Evidence Degradation</h3>
-            <p>Tests whether a policy can continue when task-relevant visual information becomes locally or globally unavailable.</p>
+            <p>Evaluates information loss at multiple spatial scales, from individual objects and interaction regions to complete frames and camera views.</p>
             <div class="group-task"><span>Shared task</span><q>Put the bowl on the plate.</q></div>
           </div>
           <div class="category-grid five">
@@ -108,8 +108,8 @@
           <div class="dimension-copy">
             <span>Dimension 02 · 1 category</span>
             <h3>Camera Staleness</h3>
-            <p>Separates current perception from delayed, frozen, or historically replayed observations.</p>
-            <div class="group-task"><span>Shared task · π<sub>0.5</sub></span><q>Put the bowl on the plate.</q></div>
+            <p>Simulates camera latency and frame drops through fixed delays, observation freezing, and historical replay while the other view remains current.</p>
+            <div class="group-task"><span>Shared task</span><q>Put the bowl on the plate.</q></div>
           </div>
           <div class="category-grid">
             <article class="category-card multi-example">
@@ -127,12 +127,12 @@
           <div class="dimension-copy">
             <span>Dimension 03 · 2 categories</span>
             <h3>Visual Source Consistency</h3>
-            <p>Probes what happens when camera views—or predicted and realized futures—tell incompatible stories.</p>
+            <p>Tests whether multiple visual sources remain consistent about the task-relevant state, including physical camera views and predicted visual futures.</p>
             <div class="group-task"><span>Shared task</span><q>Put the bowl on the plate.</q></div>
           </div>
           <div class="category-grid">
             <article class="category-card"><div class="category-title-row"><p><b>07</b> Cross-View Contradiction</p><span class="outcome success">Success</span></div><div class="sim-video-shell"><video controls autoplay muted loop playsinline preload="metadata" width="512" height="256" poster="assets/images/sim-07-cross-view-contradiction.webp" aria-label="Successful cross-view contradiction rollout for put the bowl on the plate"><source src="assets/videos/sim-07-cross-view-contradiction.webm" type="video/webm"><source src="assets/videos/sim-07-cross-view-contradiction.mp4" type="video/mp4"></video></div><span class="category-meta">FastWAM · third-person position contradiction · wrist camera unchanged</span></article>
-            <article class="category-card"><div class="category-title-row"><p><b>08</b> Prediction–Reality Divergence</p><span class="outcome failure">Failure</span></div><div class="sim-video-shell"><video controls autoplay muted loop playsinline preload="metadata" width="512" height="256" poster="assets/images/sim-08-prediction-reality-divergence.webp" aria-label="Failed LingBot-VLA prediction-reality divergence rollout for put the bowl on the plate"><source src="assets/videos/sim-08-prediction-reality-divergence.webm" type="video/webm"><source src="assets/videos/sim-08-prediction-reality-divergence.mp4" type="video/mp4"></video></div><span class="category-meta">LingBot-VLA · recursive self-prediction · both model-input views</span></article>
+            <article class="category-card"><div class="category-title-row"><p><b>08</b> Prediction–Reality Divergence</p><span class="outcome failure">Failure</span></div><div class="sim-video-shell"><video controls autoplay muted loop playsinline preload="metadata" width="512" height="256" poster="assets/images/sim-08-prediction-reality-divergence.webp" aria-label="Failed LingBot-VA prediction-reality divergence rollout for put the bowl on the plate"><source src="assets/videos/sim-08-prediction-reality-divergence.webm" type="video/webm"><source src="assets/videos/sim-08-prediction-reality-divergence.mp4" type="video/mp4"></video></div><span class="category-meta">LingBot-VA · recursive self-prediction · both model-input views</span></article>
           </div>
         </div>
 
@@ -140,14 +140,14 @@
           <div class="dimension-copy">
             <span>Dimension 04 · 4 categories</span>
             <h3>Task-Relevant Scene Variation</h3>
-            <p>Changes the scene while preserving the instruction, requiring active re-grounding rather than memorized spatial priors.</p>
+            <p>Changes the scene while keeping observations complete, current, and mutually consistent, testing whether a policy can re-ground its behavior in the current scene.</p>
             <div class="group-task"><span>Shared task</span><q>Pick up the alphabet soup and place it in the basket.</q></div>
           </div>
           <div class="category-grid">
-            <article class="category-card"><div class="category-title-row"><p><b>09</b> Task-Relevant Distractors</p><span class="outcome failure">Failure</span></div><div class="sim-video-shell"><video controls autoplay muted loop playsinline preload="metadata" width="512" height="256" poster="assets/images/sim-09-task-relevant-distractors.webp" aria-label="Failed task-relevant distractor rollout in which pi 0.5 grasps the same-position distractor instead of the alphabet soup"><source src="assets/videos/sim-09-task-relevant-distractors.webm" type="video/webm"><source src="assets/videos/sim-09-task-relevant-distractors.mp4" type="video/mp4"></video></div><span class="category-meta">π0.5 · both camera views · same-position distractor grasped</span></article>
-            <article class="category-card"><div class="category-title-row"><p><b>10</b> Task-Precondition Variation</p><span class="outcome failure">Failure</span></div><div class="sim-video-shell"><video controls autoplay muted loop playsinline preload="metadata" width="512" height="256" poster="assets/images/sim-10-task-precondition-variation.webp" aria-label="Failed object-pose variation rollout with the side-lying alphabet soup left on the table"><source src="assets/videos/sim-10-task-precondition-variation.webm" type="video/webm"><source src="assets/videos/sim-10-task-precondition-variation.mp4" type="video/mp4"></video></div><span class="category-meta">π0.5 · object pose: adjacent support face (side-lying) · soup remains on table</span></article>
-            <article class="category-card"><div class="category-title-row"><p><b>11</b> Visual State Ambiguity</p><span class="outcome success">Success</span></div><div class="sim-video-shell"><video controls autoplay muted loop playsinline preload="metadata" width="512" height="256" poster="assets/images/sim-11-visual-state-ambiguity.webp" aria-label="Successful visual state ambiguity rollout for pick up the alphabet soup and place it in the basket"><source src="assets/videos/sim-11-visual-state-ambiguity.webm" type="video/webm"><source src="assets/videos/sim-11-visual-state-ambiguity.mp4" type="video/mp4"></video></div><span class="category-meta">π0.5 · object-support-state ambiguity</span></article>
-            <article class="category-card"><div class="category-title-row"><p><b>12</b> Target Geometry Variation</p><span class="outcome success">Success</span></div><div class="sim-video-shell"><video controls autoplay muted loop playsinline preload="metadata" width="512" height="256" poster="assets/images/sim-12-target-geometry-variation.webp" aria-label="Successful target geometry variation rollout with a strongly twisted alphabet soup can"><source src="assets/videos/sim-12-target-geometry-variation.webm" type="video/webm"><source src="assets/videos/sim-12-target-geometry-variation.mp4" type="video/mp4"></video></div><span class="category-meta">π0.5 · high twist deformation · pronounced in the wrist close-up</span></article>
+            <article class="category-card"><div class="category-title-row"><p><b>09</b> Task-Relevant Distractors</p><span class="outcome failure">Failure</span></div><div class="sim-video-shell"><video controls autoplay muted loop playsinline preload="metadata" width="512" height="256" poster="assets/images/sim-09-task-relevant-distractors.webp" aria-label="Failed task-relevant distractor rollout in which pi 0.5 grasps the same-position distractor instead of the alphabet soup"><source src="assets/videos/sim-09-task-relevant-distractors.webm" type="video/webm"><source src="assets/videos/sim-09-task-relevant-distractors.mp4" type="video/mp4"></video></div><span class="category-meta">π<sub>0.5</sub> · both camera views · same-position distractor grasped</span></article>
+            <article class="category-card"><div class="category-title-row"><p><b>10</b> Task-Precondition Variation</p><span class="outcome failure">Failure</span></div><div class="sim-video-shell"><video controls autoplay muted loop playsinline preload="metadata" width="512" height="256" poster="assets/images/sim-10-task-precondition-variation.webp" aria-label="Failed object-pose variation rollout with the side-lying alphabet soup left on the table"><source src="assets/videos/sim-10-task-precondition-variation.webm" type="video/webm"><source src="assets/videos/sim-10-task-precondition-variation.mp4" type="video/mp4"></video></div><span class="category-meta">π<sub>0.5</sub> · object pose: adjacent support face (side-lying) · soup remains on table</span></article>
+            <article class="category-card"><div class="category-title-row"><p><b>11</b> Visual State Ambiguity</p><span class="outcome success">Success</span></div><div class="sim-video-shell"><video controls autoplay muted loop playsinline preload="metadata" width="512" height="256" poster="assets/images/sim-11-visual-state-ambiguity.webp" aria-label="Successful visual state ambiguity rollout for pick up the alphabet soup and place it in the basket"><source src="assets/videos/sim-11-visual-state-ambiguity.webm" type="video/webm"><source src="assets/videos/sim-11-visual-state-ambiguity.mp4" type="video/mp4"></video></div><span class="category-meta">π<sub>0.5</sub> · object-support-state ambiguity</span></article>
+            <article class="category-card"><div class="category-title-row"><p><b>12</b> Target Geometry Variation</p><span class="outcome success">Success</span></div><div class="sim-video-shell"><video controls autoplay muted loop playsinline preload="metadata" width="512" height="256" poster="assets/images/sim-12-target-geometry-variation.webp" aria-label="Successful target geometry variation rollout with a strongly twisted alphabet soup can"><source src="assets/videos/sim-12-target-geometry-variation.webm" type="video/webm"><source src="assets/videos/sim-12-target-geometry-variation.mp4" type="video/mp4"></video></div><span class="category-meta">π<sub>0.5</sub> · high twist deformation · pronounced in the wrist close-up</span></article>
           </div>
         </div>
 
