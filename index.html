@@ -178,15 +178,15 @@
         </div>
         <article class="finding-row">
           <figure><img src="assets/images/interaction-cue-masking-pdf.png" alt="Success rates under interaction-cue masking" width="1586" height="640" loading="lazy"></figure>
-          <div><span>What Visual Evidence Do Policies Rely On?</span><h3>Interaction Cues Matter More Than Static Object Appearance.</h3><p>Models often remain successful despite severe object-level occlusion, yet degrade sharply when local interaction cues are disrupted.</p></div>
+          <div><span>What Visual Evidence Do Policies Rely On?</span><h3>Interaction Cues Matter More Than Static Object Appearance.</h3><p>Across all six models, gripper masking is the most disruptive intervention, while masking contact regions is generally less harmful.</p></div>
         </article>
         <article class="finding-row reverse">
           <figure><img src="assets/images/table-iii-camera-reliance.png" alt="Original paper Table III: per-view success rate under camera staleness and view unavailability" width="780" height="495" loading="lazy"></figure>
-          <div><span>How Do Policies Use Multi-View Visual Evidence?</span><h3>Stale and Missing Views Reveal Strong Camera Dependence.</h3><p>Camera staleness and view unavailability expose asymmetric reliance on the third-person and wrist cameras across policies.</p></div>
+          <div><span>How Do Policies Use Multi-View Visual Evidence?</span><h3>Stale and Missing Views Reveal Strong Camera Dependence.</h3><p>Five of the six models are more sensitive to wrist-view perturbations, while LaWAM shows stronger dependence on the third-person camera.</p></div>
         </article>
         <article class="finding-row">
           <figure><img src="assets/images/contact-states-pdf.png" alt="Contact-state distribution under task-relevant distractors" width="792" height="482" loading="lazy"></figure>
-          <div><span>Can Policies Re-Ground When the Scene Changes?</span><h3>Spatial Distractors Expose Reliance on Learned Positional Priors.</h3><p>Placing a distractor at the target’s familiar position causes success to collapse across models.</p></div>
+          <div><span>Can Policies Re-Ground When the Scene Changes?</span><h3>Spatial Distractors Expose Reliance on Learned Positional Priors.</h3><p>Position distractors increase distractor-only contact, whereas color and shape distractors more often preserve target-directed interaction.</p></div>
         </article>
       </div>
     </section>
