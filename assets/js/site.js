@@ -19,3 +19,26 @@ if (reducedMotion) {
 
   videos.forEach((video) => observer.observe(video));
 }
+
+document.querySelectorAll("[data-copy-target]").forEach((button) => {
+  button.addEventListener("click", async () => {
+    const target = document.getElementById(button.dataset.copyTarget);
+    const value = target ? target.innerText.trim() : "";
+    if (!value) return;
+    try {
+      await navigator.clipboard.writeText(value);
+    } catch (_) {
+      const area = document.createElement("textarea");
+      area.value = value;
+      area.style.position = "fixed";
+      area.style.opacity = "0";
+      document.body.appendChild(area);
+      area.select();
+      document.execCommand("copy");
+      area.remove();
+    }
+    const original = button.textContent;
+    button.textContent = "Copied";
+    window.setTimeout(() => { button.textContent = original; }, 1400);
+  });
+});

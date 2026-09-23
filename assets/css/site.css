@@ -260,7 +260,10 @@ footer { padding: 28px 0; background: #fff; }
 .footer-inner strong { color: var(--ink); }
 
 .citation-footer { padding: 54px 0 64px; border-top: 1px solid var(--line); background: #f7f8fa; }
+.citation-code-header { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
 .citation-title { margin: 0 0 14px; color: var(--ink); font-family: 'Noto Serif', Georgia, serif; font-size: clamp(1.7rem, 3vw, 2.3rem); font-weight: 600; letter-spacing: -.02em; }
+.copy-citation { margin-bottom: 14px; padding: 6px 12px; border: 1px solid var(--line-strong); border-radius: 4px; color: var(--ink-soft); font: 600 .75rem/1.2 'Noto Sans', sans-serif; background: #fff; cursor: pointer; }
+.copy-citation:hover { color: #fff; border-color: var(--deep); background: var(--deep); }
 .citation-bibtex { max-width: 100%; margin: 0; padding: 18px 20px; overflow-x: auto; border: 1px solid var(--line); border-radius: 6px; color: var(--ink-soft); font: .78rem/1.55 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; background: #fff; }
 
 @media (min-width: 961px) {
