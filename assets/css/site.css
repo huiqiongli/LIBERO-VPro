@@ -107,6 +107,11 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .abstract-copy p { margin: 0; color: var(--ink-soft); font-size: 1.08rem; line-height: 1.8; }
 .abstract-copy p + p { margin-top: 16px; }
 
+.project-video-section { background: #fff; box-shadow: inset 0 1px 0 #e9ebef; }
+.project-video-card { max-width: 1280px; margin: 0 auto; }
+.project-video-card video { width: 100%; height: auto; border: 1px solid var(--line); border-radius: 8px; background: #0b1316; box-shadow: var(--shadow); }
+.project-video-card figcaption { margin-top: 10px; color: var(--muted); font-size: .78rem; text-align: center; }
+
 .section-heading { display: block; max-width: 1080px; margin: 0 auto 28px; text-align: center; }
 .section-heading > p { max-width: 900px; margin: 14px auto 0; color: var(--muted); font-size: .92rem; }
 .real-world-section { color: var(--ink); background: #f7f8fa; box-shadow: inset 0 1px 0 #e9ebef; }
@@ -255,6 +260,13 @@ footer { padding: 28px 0; background: #fff; }
 .footer-inner p { margin: 0; }
 .footer-inner strong { color: var(--ink); }
 
+.citation-footer { padding: 54px 0 64px; border-top: 1px solid var(--line); background: #f7f8fa; }
+.citation-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 18px; }
+.citation-heading h2 { margin: 0; color: var(--ink); font-family: 'Noto Serif', Georgia, serif; font-size: clamp(1.7rem, 3vw, 2.3rem); font-weight: 600; letter-spacing: -.02em; }
+.citation-heading a { color: var(--accent-dark); font-size: .86rem; font-weight: 600; }
+.citation-text { max-width: 1000px; margin: 16px 0 18px; color: var(--ink-soft); font-size: .92rem; line-height: 1.65; }
+.citation-bibtex { max-width: 100%; margin: 0; padding: 18px 20px; overflow-x: auto; border: 1px solid var(--line); border-radius: 6px; color: var(--ink-soft); font: .78rem/1.55 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; background: #fff; }
+
 @media (min-width: 961px) {
   .dimension-copy { position: sticky; top: 100px; }
 }
@@ -322,6 +334,8 @@ footer { padding: 28px 0; background: #fff; }
   .paper-table-card header { grid-template-columns: 1fr; }
   .paper-table-pair { grid-template-columns: 1fr; }
   .footer-inner { align-items: flex-start; flex-direction: column; gap: 4px; }
+  .citation-heading { align-items: flex-start; flex-direction: column; gap: 5px; }
+  .citation-footer { padding: 42px 0 48px; }
 }
 
 @media (max-width: 480px) {

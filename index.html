@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&amp;family=Noto+Serif:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/site.css?v=20260921-5">
+  <link rel="stylesheet" href="assets/css/site.css?v=20260923-1">
   <script src="assets/js/site.js" defer></script>
 </head>
 <body>
@@ -42,7 +42,7 @@
         </p>
         <p class="correspondence"><sup>†</sup> Corresponding author and project lead.</p>
         <div class="resource-links" aria-label="Project resources">
-          <a class="resource-button primary" href="assets/LIBERO-VPro.pdf" target="_blank" rel="noopener">
+          <a class="resource-button primary" href="https://arxiv.org/abs/2609.24350" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6M8 13h8M8 17h5"></path></svg>
             Paper
           </a>
@@ -72,6 +72,22 @@
           <p>Our results reveal that strong nominal performance can mask substantial weaknesses in visual grounding and adaptation. Models often remain successful despite severe object-level occlusion, yet degrade sharply when local interaction cues are disrupted or familiar spatial priors are violated. They are also highly sensitive to stale or missing observations and struggle when changed task preconditions require behavioral adaptation.</p>
           <p>Finally, VLAs and WAMs exhibit distinct robustness profiles, showing that visual robustness is multi-dimensional and architecture-dependent. LIBERO-VPro provides a systematic diagnostic framework for developing robotic foundation models that can more reliably ground and adapt their actions under challenging visual conditions.</p>
         </div>
+      </div>
+    </section>
+
+    <section class="section project-video-section" id="video">
+      <div class="container wide">
+        <div class="section-heading">
+          <div><h2>Project video</h2></div>
+          <p>A visual overview of LIBERO-VPro's motivation, benchmark design, simulated findings, and physical rollouts.</p>
+        </div>
+        <figure class="project-video-card">
+          <video controls playsinline preload="metadata" width="1280" height="720" aria-label="LIBERO-VPro project video">
+            <source src="assets/videos/ICRA27_LIBERO_VPro_website.mp4" type="video/mp4">
+            Your browser does not support embedded video.
+          </video>
+          <figcaption>LIBERO-VPro: Benchmarking Closed-Loop Visual Robustness of Robotic Foundation Models.</figcaption>
+        </figure>
       </div>
     </section>
 
@@ -209,7 +225,7 @@
 
         <article class="rollout-case">
           <header class="case-header"><span class="case-index">(b)</span><div><p class="case-dimension stale">Camera Staleness</p><h3>Third-person delay by one replan</h3></div><p class="case-description">The third-person observation is delayed by one replanning cycle while the wrist view remains current.</p></header>
-          <p class="instruction">“Move the white box to the right.”</p>
+          <p class="instruction">“Move the white box from the left side to the right side”</p>
           <div class="rollout-grid">
             <figure class="video-card"><div class="video-shell"><video controls autoplay muted loop playsinline preload="metadata" width="960" height="540" poster="assets/images/move-pi05-success.webp" aria-label="Pi 0.5 successful move rollout under third-person camera staleness"><source src="assets/videos/move-pi05-success.webm" type="video/webm"><source src="assets/videos/move-pi05-success.mp4" type="video/mp4">Your browser does not support embedded video.</video></div><figcaption><span class="model-name">π<sub>0.5</sub></span><span class="outcome success physical-outcome">Success</span><p class="rollout-note success-note">Success: completes the Move task despite the delayed third-person observation.</p></figcaption></figure>
             <figure class="video-card"><div class="video-shell"><video controls autoplay muted loop playsinline preload="metadata" width="960" height="540" poster="assets/images/move-lawam-failure.webp" aria-label="LaWAM failed move rollout under third-person camera staleness"><source src="assets/videos/move-lawam-failure.webm" type="video/webm"><source src="assets/videos/move-lawam-failure.mp4" type="video/mp4">Your browser does not support embedded video.</video></div><figcaption><span class="model-name">LaWAM</span><span class="outcome failure physical-outcome">Failure</span><p class="rollout-note failure-note">Failure mode: follows a pushing trajectory without establishing contact with the white box.</p></figcaption></figure>
@@ -219,5 +235,18 @@
     </section>
 
   </main>
+
+  <footer class="citation-footer">
+    <div class="container">
+      <div class="citation-heading"><h2>Citation</h2><a href="https://arxiv.org/abs/2609.24350" target="_blank" rel="noopener">arXiv:2609.24350</a></div>
+      <p class="citation-text">Huiqiong Li, Zhiting Mei, Anirudha Majumdar, Jingjing Chen, Yu-Gang Jiang, and Bin Zhu. “LIBERO-VPro: Benchmarking Closed-Loop Visual Robustness of Robotic Foundation Models.” arXiv preprint arXiv:2609.24350, 2026.</p>
+      <pre class="citation-bibtex"><code>@article{li2026liberovpro,
+  title   = {LIBERO-VPro: Benchmarking Closed-Loop Visual Robustness of Robotic Foundation Models},
+  author  = {Huiqiong Li and Zhiting Mei and Anirudha Majumdar and Jingjing Chen and Yu-Gang Jiang and Bin Zhu},
+  journal = {arXiv preprint arXiv:2609.24350},
+  year    = {2026}
+}</code></pre>
+    </div>
+  </footer>
 </body>
 </html>
