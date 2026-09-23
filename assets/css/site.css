@@ -107,8 +107,9 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .abstract-copy p { margin: 0; color: var(--ink-soft); font-size: 1.08rem; line-height: 1.8; }
 .abstract-copy p + p { margin-top: 16px; }
 
-.project-video-inline { max-width: 1280px; margin: 24px auto 32px; }
-.project-video-inline video { width: 100%; height: auto; border: 1px solid var(--line); border-radius: 8px; background: #0b1316; box-shadow: var(--shadow); }
+.project-video-section { padding: 42px 0; background: #f7f8fa; box-shadow: inset 0 1px 0 #e9ebef, inset 0 -1px 0 #e9ebef; }
+.project-video-card { max-width: 920px; margin: 0 auto; }
+.project-video-card video { width: 100%; height: auto; border: 1px solid var(--line); border-radius: 8px; background: #0b1316; box-shadow: var(--shadow); }
 
 .section-heading { display: block; max-width: 1080px; margin: 0 auto 28px; text-align: center; }
 .section-heading > p { max-width: 900px; margin: 14px auto 0; color: var(--muted); font-size: .92rem; }
