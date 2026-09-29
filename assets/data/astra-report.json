@@ -1,0 +1,604 @@
+{
+  "conditions": [
+    {
+      "id": "normal",
+      "astra": {
+        "n": 3,
+        "successes": 3,
+        "rate": 100.0
+      },
+      "models": {
+        "pi0": {
+          "n": 30,
+          "successes": 26,
+          "rate": 86.66666666666667
+        },
+        "pi05": {
+          "n": 30,
+          "successes": 28,
+          "rate": 93.33333333333333
+        },
+        "openvla_oft": {
+          "n": 30,
+          "successes": 29,
+          "rate": 96.66666666666667
+        },
+        "fastwam": {
+          "n": 30,
+          "successes": 29,
+          "rate": 96.66666666666667
+        },
+        "lingbot_va": {
+          "n": 30,
+          "successes": 29,
+          "rate": 96.66666666666667
+        },
+        "lawam": {
+          "n": 30,
+          "successes": 30,
+          "rate": 100.0
+        }
+      }
+    },
+    {
+      "id": "A1_target_object_100pct",
+      "astra": {
+        "n": 3,
+        "successes": 1,
+        "rate": 33.333333333333336
+      },
+      "models": {
+        "pi0": {
+          "n": 30,
+          "successes": 19,
+          "rate": 63.333333333333336
+        },
+        "pi05": {
+          "n": 30,
+          "successes": 26,
+          "rate": 86.66666666666667
+        },
+        "openvla_oft": {
+          "n": 30,
+          "successes": 21,
+          "rate": 70.0
+        },
+        "fastwam": {
+          "n": 30,
+          "successes": 28,
+          "rate": 93.33333333333333
+        },
+        "lingbot_va": {
+          "n": 30,
+          "successes": 28,
+          "rate": 93.33333333333333
+        },
+        "lawam": {
+          "n": 30,
+          "successes": 20,
+          "rate": 66.66666666666667
+        }
+      }
+    },
+    {
+      "id": "A2_target_container_100pct",
+      "astra": {
+        "n": 3,
+        "successes": 2,
+        "rate": 66.66666666666667
+      },
+      "models": {
+        "pi0": {
+          "n": 30,
+          "successes": 22,
+          "rate": 73.33333333333333
+        },
+        "pi05": {
+          "n": 30,
+          "successes": 28,
+          "rate": 93.33333333333333
+        },
+        "openvla_oft": {
+          "n": 30,
+          "successes": 27,
+          "rate": 90.0
+        },
+        "fastwam": {
+          "n": 30,
+          "successes": 29,
+          "rate": 96.66666666666667
+        },
+        "lingbot_va": {
+          "n": 30,
+          "successes": 29,
+          "rate": 96.66666666666667
+        },
+        "lawam": {
+          "n": 30,
+          "successes": 22,
+          "rate": 73.33333333333333
+        }
+      }
+    },
+    {
+      "id": "A3_gripper",
+      "astra": {
+        "n": 3,
+        "successes": 2,
+        "rate": 66.66666666666667
+      },
+      "models": {
+        "pi0": {
+          "n": 30,
+          "successes": 16,
+          "rate": 53.333333333333336
+        },
+        "pi05": {
+          "n": 30,
+          "successes": 0,
+          "rate": 0.0
+        },
+        "openvla_oft": {
+          "n": 30,
+          "successes": 0,
+          "rate": 0.0
+        },
+        "fastwam": {
+          "n": 30,
+          "successes": 10,
+          "rate": 33.333333333333336
+        },
+        "lingbot_va": {
+          "n": 30,
+          "successes": 27,
+          "rate": 90.0
+        },
+        "lawam": {
+          "n": 30,
+          "successes": 9,
+          "rate": 30.0
+        }
+      }
+    },
+    {
+      "id": "A4_same_position",
+      "astra": {
+        "n": 3,
+        "successes": 2,
+        "rate": 66.66666666666667
+      },
+      "models": {
+        "pi0": {
+          "n": 30,
+          "successes": 2,
+          "rate": 6.666666666666667
+        },
+        "pi05": {
+          "n": 30,
+          "successes": 5,
+          "rate": 16.666666666666668
+        },
+        "openvla_oft": {
+          "n": 30,
+          "successes": 0,
+          "rate": 0.0
+        },
+        "fastwam": {
+          "n": 30,
+          "successes": 0,
+          "rate": 0.0
+        },
+        "lingbot_va": {
+          "n": 30,
+          "successes": 1,
+          "rate": 3.3333333333333335
+        },
+        "lawam": {
+          "n": 30,
+          "successes": 3,
+          "rate": 10.0
+        }
+      }
+    },
+    {
+      "id": "A5_adjacent_support_face",
+      "astra": {
+        "n": 2,
+        "successes": 2,
+        "rate": 100.0
+      },
+      "models": {
+        "pi0": {
+          "n": 20,
+          "successes": 5,
+          "rate": 25.0
+        },
+        "pi05": {
+          "n": 20,
+          "successes": 3,
+          "rate": 15.0
+        },
+        "openvla_oft": {
+          "n": 20,
+          "successes": 1,
+          "rate": 5.0
+        },
+        "fastwam": {
+          "n": 20,
+          "successes": 8,
+          "rate": 40.0
+        },
+        "lingbot_va": {
+          "n": 20,
+          "successes": 5,
+          "rate": 25.0
+        },
+        "lawam": {
+          "n": 20,
+          "successes": 6,
+          "rate": 30.0
+        }
+      }
+    },
+    {
+      "id": "A5_open_20pct",
+      "astra": {
+        "n": 3,
+        "successes": 2,
+        "rate": 66.66666666666667
+      },
+      "models": {
+        "pi0": {
+          "n": 30,
+          "successes": 8,
+          "rate": 26.666666666666668
+        },
+        "pi05": {
+          "n": 30,
+          "successes": 10,
+          "rate": 33.333333333333336
+        },
+        "openvla_oft": {
+          "n": 30,
+          "successes": 10,
+          "rate": 33.333333333333336
+        },
+        "fastwam": {
+          "n": 30,
+          "successes": 10,
+          "rate": 33.333333333333336
+        },
+        "lingbot_va": {
+          "n": 30,
+          "successes": 8,
+          "rate": 26.666666666666668
+        },
+        "lawam": {
+          "n": 30,
+          "successes": 10,
+          "rate": 33.333333333333336
+        }
+      }
+    },
+    {
+      "id": "A5_open_50pct",
+      "astra": {
+        "n": 3,
+        "successes": 2,
+        "rate": 66.66666666666667
+      },
+      "models": {
+        "pi0": {
+          "n": 30,
+          "successes": 11,
+          "rate": 36.666666666666664
+        },
+        "pi05": {
+          "n": 30,
+          "successes": 5,
+          "rate": 16.666666666666668
+        },
+        "openvla_oft": {
+          "n": 30,
+          "successes": 10,
+          "rate": 33.333333333333336
+        },
+        "fastwam": {
+          "n": 30,
+          "successes": 9,
+          "rate": 30.0
+        },
+        "lingbot_va": {
+          "n": 30,
+          "successes": 11,
+          "rate": 36.666666666666664
+        },
+        "lawam": {
+          "n": 30,
+          "successes": 5,
+          "rate": 16.666666666666668
+        }
+      }
+    },
+    {
+      "id": "A5_opposite_support_face",
+      "astra": {
+        "n": 3,
+        "successes": 2,
+        "rate": 66.66666666666667
+      },
+      "models": {
+        "pi0": {
+          "n": 30,
+          "successes": 6,
+          "rate": 20.0
+        },
+        "pi05": {
+          "n": 30,
+          "successes": 9,
+          "rate": 30.0
+        },
+        "openvla_oft": {
+          "n": 30,
+          "successes": 10,
+          "rate": 33.333333333333336
+        },
+        "fastwam": {
+          "n": 30,
+          "successes": 10,
+          "rate": 33.333333333333336
+        },
+        "lingbot_va": {
+          "n": 30,
+          "successes": 10,
+          "rate": 33.333333333333336
+        },
+        "lawam": {
+          "n": 30,
+          "successes": 11,
+          "rate": 36.666666666666664
+        }
+      }
+    },
+    {
+      "id": "C3_existence_agentview",
+      "astra": {
+        "n": 3,
+        "successes": 3,
+        "rate": 100.0
+      },
+      "models": {
+        "pi0": {
+          "n": 30,
+          "successes": 20,
+          "rate": 66.66666666666667
+        },
+        "pi05": {
+          "n": 30,
+          "successes": 23,
+          "rate": 76.66666666666667
+        },
+        "openvla_oft": {
+          "n": 30,
+          "successes": 20,
+          "rate": 66.66666666666667
+        },
+        "fastwam": {
+          "n": 30,
+          "successes": 18,
+          "rate": 60.0
+        },
+        "lingbot_va": {
+          "n": 30,
+          "successes": 29,
+          "rate": 96.66666666666667
+        },
+        "lawam": {
+          "n": 30,
+          "successes": 18,
+          "rate": 60.0
+        }
+      }
+    },
+    {
+      "id": "C3_existence_wrist",
+      "astra": {
+        "n": 3,
+        "successes": 3,
+        "rate": 100.0
+      },
+      "models": {
+        "pi0": {
+          "n": 30,
+          "successes": 1,
+          "rate": 3.3333333333333335
+        },
+        "pi05": {
+          "n": 30,
+          "successes": 15,
+          "rate": 50.0
+        },
+        "openvla_oft": {
+          "n": 30,
+          "successes": 5,
+          "rate": 16.666666666666668
+        },
+        "fastwam": {
+          "n": 30,
+          "successes": 3,
+          "rate": 10.0
+        },
+        "lingbot_va": {
+          "n": 30,
+          "successes": 12,
+          "rate": 40.0
+        },
+        "lawam": {
+          "n": 30,
+          "successes": 17,
+          "rate": 56.666666666666664
+        }
+      }
+    },
+    {
+      "id": "C3_position_agentview",
+      "astra": {
+        "n": 3,
+        "successes": 2,
+        "rate": 66.66666666666667
+      },
+      "models": {
+        "pi0": {
+          "n": 30,
+          "successes": 23,
+          "rate": 76.66666666666667
+        },
+        "pi05": {
+          "n": 30,
+          "successes": 19,
+          "rate": 63.333333333333336
+        },
+        "openvla_oft": {
+          "n": 30,
+          "successes": 19,
+          "rate": 63.333333333333336
+        },
+        "fastwam": {
+          "n": 30,
+          "successes": 18,
+          "rate": 60.0
+        },
+        "lingbot_va": {
+          "n": 30,
+          "successes": 24,
+          "rate": 80.0
+        },
+        "lawam": {
+          "n": 30,
+          "successes": 11,
+          "rate": 36.666666666666664
+        }
+      }
+    },
+    {
+      "id": "C3_position_wrist",
+      "astra": {
+        "n": 3,
+        "successes": 2,
+        "rate": 66.66666666666667
+      },
+      "models": {
+        "pi0": {
+          "n": 30,
+          "successes": 0,
+          "rate": 0.0
+        },
+        "pi05": {
+          "n": 30,
+          "successes": 14,
+          "rate": 46.666666666666664
+        },
+        "openvla_oft": {
+          "n": 30,
+          "successes": 7,
+          "rate": 23.333333333333332
+        },
+        "fastwam": {
+          "n": 30,
+          "successes": 2,
+          "rate": 6.666666666666667
+        },
+        "lingbot_va": {
+          "n": 30,
+          "successes": 4,
+          "rate": 13.333333333333334
+        },
+        "lawam": {
+          "n": 30,
+          "successes": 12,
+          "rate": 40.0
+        }
+      }
+    },
+    {
+      "id": "C3_state_agentview",
+      "astra": {
+        "n": 3,
+        "successes": 1,
+        "rate": 33.333333333333336
+      },
+      "models": {
+        "pi0": {
+          "n": 30,
+          "successes": 27,
+          "rate": 90.0
+        },
+        "pi05": {
+          "n": 30,
+          "successes": 23,
+          "rate": 76.66666666666667
+        },
+        "openvla_oft": {
+          "n": 30,
+          "successes": 27,
+          "rate": 90.0
+        },
+        "fastwam": {
+          "n": 30,
+          "successes": 28,
+          "rate": 93.33333333333333
+        },
+        "lingbot_va": {
+          "n": 30,
+          "successes": 29,
+          "rate": 96.66666666666667
+        },
+        "lawam": {
+          "n": 30,
+          "successes": 16,
+          "rate": 53.333333333333336
+        }
+      }
+    },
+    {
+      "id": "C3_state_wrist",
+      "astra": {
+        "n": 3,
+        "successes": 3,
+        "rate": 100.0
+      },
+      "models": {
+        "pi0": {
+          "n": 30,
+          "successes": 18,
+          "rate": 60.0
+        },
+        "pi05": {
+          "n": 30,
+          "successes": 29,
+          "rate": 96.66666666666667
+        },
+        "openvla_oft": {
+          "n": 30,
+          "successes": 19,
+          "rate": 63.333333333333336
+        },
+        "fastwam": {
+          "n": 30,
+          "successes": 21,
+          "rate": 70.0
+        },
+        "lingbot_va": {
+          "n": 30,
+          "successes": 22,
+          "rate": 73.33333333333333
+        },
+        "lawam": {
+          "n": 30,
+          "successes": 26,
+          "rate": 86.66666666666667
+        }
+      }
+    }
+  ]
+}
