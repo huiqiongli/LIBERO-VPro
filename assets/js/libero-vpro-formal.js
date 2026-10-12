@@ -209,6 +209,16 @@
       video.playbackRate = rate;
       video.muted = true;
       video.loop = true;
+
+      const figure = video.closest('figure');
+      if (figure && !figure.querySelector(':scope > .video-speed-badge')) {
+        figure.classList.add('video-with-speed-badge');
+        const badge = document.createElement('span');
+        badge.className = 'video-speed-badge';
+        badge.textContent = `${rate}\u00d7 Speed`;
+        badge.setAttribute('aria-label', `Video playback speed: ${rate} times`);
+        figure.appendChild(badge);
+      }
     };
     videos.forEach(prepare);
     if (!('IntersectionObserver' in window)) {

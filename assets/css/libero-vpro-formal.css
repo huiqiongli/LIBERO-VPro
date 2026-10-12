@@ -50,6 +50,8 @@ h3{font-size:18px;line-height:1.35}
 hr{height:1px;border:0;background:var(--line);margin:44px 0 38px}
 
 figure{margin:0}
+.video-with-speed-badge{position:relative}
+.video-speed-badge{position:absolute;z-index:4;top:8px;right:8px;padding:4px 8px;border:1px solid rgba(255,255,255,.42);border-radius:999px;background:rgba(20,27,31,.78);box-shadow:0 1px 4px rgba(0,0,0,.18);color:#fff;font-size:10px;font-weight:700;line-height:1;letter-spacing:.02em;pointer-events:none;backdrop-filter:blur(3px)}
 figcaption,.figcap{margin:8px 0 0;color:var(--muted);font-size:12.5px;line-height:1.46}
 video{display:block;width:100%;background:#111;border:1px solid var(--line-dark)}
 .setups{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:28px 0 31px}
