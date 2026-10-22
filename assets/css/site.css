@@ -77,8 +77,6 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .resource-button svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 .resource-button.primary { color: #fff; border-color: #000; background: #000; }
 .resource-button.primary:hover { color: #fff; border-color: #222; background: #222; }
-.dataset-soon { cursor: default; }
-.dataset-soon:hover { color: #fff; text-decoration: none; border-color: #000; background: #000; }
 .resource-button.disabled { color: #9aa3b3; border-color: var(--line); background: #f6f7fa; cursor: default; }
 .resource-button small { color: #919aaa; font-size: .6rem; letter-spacing: .07em; text-transform: uppercase; }
 .astra-study-note { max-width: 760px; margin: 18px auto 0; color: var(--muted); font-size: .9rem; line-height: 1.6; }
